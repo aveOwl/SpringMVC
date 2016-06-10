@@ -21,13 +21,6 @@ public class UserController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String initCreationForm(Map<String, Object> model) {
-        User newUser = new User();
-        newUser.setUserName("test");
-        newUser.setPassword("test");
-        newUser.setEmail("test@gmail.com");
-
-        userService.create(newUser);
-
         User user = userService.getById(1L);
         model.put("user", user);
         return "user";
