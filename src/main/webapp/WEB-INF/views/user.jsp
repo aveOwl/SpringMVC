@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <td>UserName</td>
-            <td>${user.username}</td>
+            <td>${user.userName}</td>
         </tr>
         <tr>
             <td>Password</td>
