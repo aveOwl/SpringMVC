@@ -1,20 +1,24 @@
-﻿DROP TABLE udemy.user;
+﻿DROP TABLE iowniwant.user;
 
-CREATE TABLE udemy.user (
-   id 		     BIGSERIAL NOT NULL,
-   username 	 VARCHAR(60),
-   password 	 VARCHAR(60),
-   email	     VARCHAR(60),
-CONSTRAINT id_pk PRIMARY KEY(id)
+-- User Data Table
+CREATE TABLE iowniwant.user (
+   user_id         BIGSERIAL NOT NULL,
+   first_name      VARCHAR(60) NOT NULL,
+   last_name       VARCHAR(60) NOT NULL,
+   nick_name       VARCHAR(60) NOT NULL UNIQUE,
+   user_password   VARCHAR(60) NOT NULL,
+   email           VARCHAR(60),
+   month_salary    REAL DEFAULT 0,
+   CONSTRAINT user_id_pk PRIMARY KEY (user_id)
 );
 
-INSERT INTO udemy.user(username, password, email)
-VALUES('user1', 'user1', 'user1@gmail.com');
-INSERT INTO udemy.user(username, password, email)
-VALUES('user2', 'user2', 'user2@red.com');
-INSERT INTO udemy.user(username, password, email)
-VALUES('user3', 'user3', 'user3@rot.com');
-INSERT INTO udemy.user(username, password, email)
-VALUES('user4', 'user4', 'user4@gmail.com');
-
-SELECT udemy.user.id, udemy.user.username, udemy.user.password, udemy.user.email from udemy.user WHERE udemy.user.id=1;
+INSERT INTO iowniwant.user (first_name, last_name, nick_name, user_password, email, month_salary)
+values ('admin', 'admin', 'admin', 'admin', 'admin@gmail.com', 50000);
+INSERT INTO iowniwant.user (first_name, last_name, nick_name, user_password, email, month_salary)
+values ('Jake', 'Q', 'Clayton', 'tripLane991', 'jayQ@gmail.com', 2500);
+INSERT INTO iowniwant.user (first_name, last_name, nick_name, user_password, email, month_salary)
+values ('Robin', 'J', 'BlueBerry', 'randyisoz19', 'robinJ@gmail.com', 11000);
+INSERT INTO iowniwant.user (first_name, last_name, nick_name, user_password, email, month_salary)
+values ('Wade', 'J', 'ThatGuy', '922isthisnight', 'wadeJ@gmail.com', 1800);
+INSERT INTO iowniwant.user (first_name, last_name, nick_name, user_password, email, month_salary)
+values ('Sarah', 'Q', 'GlanceBlade', 'black1white', 'sarahQ@gmail.com', 9000);

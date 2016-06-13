@@ -9,6 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ * @Configuration tells, that this class is a Spring configuration.
+ * @EnableWebMvc imports the Spring MVC configuration.
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.spring.mvc.controller"})

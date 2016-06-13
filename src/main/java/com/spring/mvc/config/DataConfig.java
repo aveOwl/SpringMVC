@@ -17,6 +17,16 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * @Configuration tells, that this class is a Spring configuration.
+ *
+ * @EnableTransactionManagement enables transaction management for the purpose of
+ * managing transactions in DataBase.
+ *
+ * @ComponentScan tells Spring where to find Entity, DAO, Service.
+ *
+ * @PropertySource to make use of the properties file.
+ */
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.spring.mvc")
@@ -34,10 +44,15 @@ public class DataConfig {
     private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
     private static final String PROP_HIBERNATE_DEFAULT_SCHEMA = "hibernate.default_schema";
 
-    // to retrieve properties from persistence-postgresql.properties file.
+    // to retrieve properties from properties file.
     @Resource
     private Environment env;
 
+    /**
+     * @Bean indicates that a method instantiates, configures and initializes
+     * a new object to be managed by the Spring IoC container.
+     * @return dataSource.
+     */
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

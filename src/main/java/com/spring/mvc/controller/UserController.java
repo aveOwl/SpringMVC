@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -19,10 +20,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/showAll", method = RequestMethod.GET)
     public String initCreationForm(Map<String, Object> model) {
-        User user = userService.getById(1L);
-        model.put("user", user);
-        return "user";
+        List<User> users = userService.getAll();
+        model.put("users", users);
+        return "users";
     }
 }
