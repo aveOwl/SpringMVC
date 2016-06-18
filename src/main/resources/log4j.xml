@@ -6,21 +6,16 @@
     <appender name="Console" class="org.apache.log4j.ConsoleAppender">
         <param name="target" value="System.out"/>
         <layout class="com.jcabi.log.MulticolorLayout">
-            <param name="ConversionPattern" value="[%color{%p}]: %m%n"/>
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS}  %color{%p [%c]: %m%n}"/>
         </layout>
     </appender>
 
-    <logger name="org.hibernate.type" additivity="false">
-        <level value="trace"/>
+    <logger name="org.hibernate" additivity="false">
+        <level value="error"/>
         <appender-ref ref="Console"/>
     </logger>
 
-    <logger name="org.hibernate.SQL" additivity="false">
-        <level value="debug"/>
-        <appender-ref ref="Console"/>
-    </logger>
-
-    <logger name="org.springframework">
+    <logger name="org.springframework.web">
         <level value="debug"/>
         <appender-ref ref="Console"/>
     </logger>

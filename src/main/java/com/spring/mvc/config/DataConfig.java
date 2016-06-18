@@ -30,7 +30,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.spring.mvc")
-@PropertySource("classpath:persistence-postgresql.properties")
+@PropertySource("classpath:database/persistence-postgresql.properties")
 @EnableJpaRepositories("com.spring.mvc.repository")
 public class DataConfig {
 
