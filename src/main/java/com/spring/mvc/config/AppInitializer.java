@@ -8,8 +8,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     /**
-     * Root WebApplicationContext. Containing middle-tier services,
-     * dataSources, etc.
+     * Root WebApplicationContext. Containing middle-tier services, dataSources, etc.
      * @return Class with RootConfiguration.
      */
     @Override

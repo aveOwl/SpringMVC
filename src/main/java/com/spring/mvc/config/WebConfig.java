@@ -18,6 +18,9 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {"com.spring.mvc.controller"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
+    /**
+     * Resolves logical String-based view names to actual View types.
+     */
     @Bean
     public ViewResolver internalResourceViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -27,11 +30,19 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return viewResolver;
     }
 
+    /**
+     * No need for custom controller logic - render a home page.
+     */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("welcome");
     }
 
+    /**
+     * This allows for mapping the DispatcherServlet to "/" (thus overriding the mapping of
+     * the container’s default Servlet), while still allowing static resource requests to
+     * be handled by the container’s default Servlet.
+     */
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();

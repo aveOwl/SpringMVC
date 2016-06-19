@@ -23,9 +23,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/showAll", method = RequestMethod.GET)
-    public String initCreationForm(ModelMap model) {
+    public String showAllUsers(Model model) {
         List<User> users = userService.getAll();
-        model.put("users", users);
+        model.addAttribute("users", users);
         return "user/users";
     }
 
