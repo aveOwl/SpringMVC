@@ -31,6 +31,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
     /**
+     * All resources inside folder src/main/webapp/resources are mapped
+     * so they can be referred to inside JSP files
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
+
+    /**
      * No need for custom controller logic - render a home page.
      */
     @Override

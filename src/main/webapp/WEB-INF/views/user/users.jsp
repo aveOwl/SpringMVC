@@ -1,36 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page session="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <title>Users List</title>
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS"/>
+    <link href="${bootstrapCSS}" rel="stylesheet"/>
 </head>
-<style>
-    table {
-        width:100%;
-    }
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 5px;
-        text-align: left;
-    }
-    table#t01 tr:nth-child(even) {
-        background-color: #eee;
-    }
-    table#t01 tr:nth-child(odd) {
-        background-color:#fff;
-    }
-    table#t01 th {
-        background-color: black;
-        color: white;
-    }
-</style>
 <body>
-Data you've fetched:<br/><br/>
-<table>
+<h2>
+    Data you've fetched:
+</h2>
+<table class="table table-bordered">
+    <thead>
     <tr>
         <th>user_id</th>
         <th>firstName</th>
@@ -40,9 +22,12 @@ Data you've fetched:<br/><br/>
         <th>email</th>
         <th>month_salary</th>
     </tr>
-<c:forEach items="${users}" var="user">
+    </thead>
+    <tbody>
+    <c:forEach items="${users}" var="user">
+        <spring:url value="/user/${user.userId}" var="urlUser"/>
         <tr>
-            <td>${user.userId} </td>
+            <th scope="row"><a href="${urlUser}">${user.userId}</a></th>
             <td>${user.firstName} </td>
             <td>${user.lastName} </td>
             <td>${user.nickName} </td>
@@ -50,9 +35,8 @@ Data you've fetched:<br/><br/>
             <td>${user.email} </td>
             <td>${user.month_salary} </td>
         </tr>
-</c:forEach>
+    </c:forEach>
+    </tbody>
 </table>
-
 </body>
-
 </html>

@@ -1,34 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <title>Profile</title>
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS"/>
+    <link href="${bootstrapCSS}" rel="stylesheet"/>
 </head>
-<style>
-    table {
-        width:100%;
-    }
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 5px;
-        text-align: left;
-    }
-    table#t01 tr:nth-child(even) {
-        background-color: #eee;
-    }
-    table#t01 tr:nth-child(odd) {
-        background-color:#fff;
-    }
-    table#t01 th {
-        background-color: black;
-        color: white;
-    }
-</style>
 <body>
-User with ID=${user.userId}<br/><br/>
-<table>
+<h2>
+    User with ID=${user.userId}
+</h2>
+<br/>
+<table class="table table-bordered">
+    <thead>
     <tr>
         <th>firstName</th>
         <th>lastName</th>
@@ -37,6 +21,8 @@ User with ID=${user.userId}<br/><br/>
         <th>email</th>
         <th>month_salary</th>
     </tr>
+    </thead>
+    <tbody>
         <tr>
             <td>${user.firstName} </td>
             <td>${user.lastName} </td>
@@ -45,6 +31,7 @@ User with ID=${user.userId}<br/><br/>
             <td>${user.email} </td>
             <td>${user.month_salary} </td>
         </tr>
+    </tbody>
 </table>
 </body>
 </html>
