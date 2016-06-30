@@ -26,11 +26,16 @@ public class User {
     @Column(name = "user_password")
     private String password;
 
+    @Column(name = "confirm_password")
+    private String confirmPassword;
+
     @Column(name = "email")
     private String email;
 
     @Column(name = "month_salary")
-    private Double month_salary;
+    private Double monthSalary;
+
+    public boolean isNew() {return this.userId == null;}
 
     public Long getUserId() {
         return userId;
@@ -72,6 +77,14 @@ public class User {
         this.password = password;
     }
 
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -80,12 +93,12 @@ public class User {
         this.email = email;
     }
 
-    public Double getMonth_salary() {
-        return month_salary;
+    public Double getMonthSalary() {
+        return monthSalary;
     }
 
-    public void setMonth_salary(Double month_salary) {
-        this.month_salary = month_salary;
+    public void setMonthSalary(Double month_salary) {
+        this.monthSalary = month_salary;
     }
 
 
@@ -114,7 +127,7 @@ public class User {
                 ", nickName='" + nickName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", month_salary=" + month_salary +
+                ", monthSalary=" + monthSalary +
                 '}';
     }
 }

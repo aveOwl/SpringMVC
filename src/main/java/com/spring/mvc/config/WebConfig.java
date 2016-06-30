@@ -3,11 +3,12 @@ package com.spring.mvc.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
 
 /**
  * @Configuration tells, that this class is a Spring configuration.
@@ -55,5 +56,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+    }
+
+    /**
+     * Enable Messaging.
+     */
+    @Bean
+    public ResourceBundleMessageSource messageSource() {
+        ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
+        rb.setBasenames("messages/messages", "messages/validation");
+        return rb;
     }
 }

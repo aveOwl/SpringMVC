@@ -3,16 +3,16 @@
 <html lang="en">
 <head>
     <title>Front Page</title>
-    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCSS"/>
-    <link href="${bootstrapCSS}" rel="stylesheet" />
 </head>
 <body>
+<jsp:include page="fragments/header.jsp"/>
     <div class="text-center">
-        <spring:url value="/users" var="urlShowAll"/>
+        <spring:url value="/users" var="urlShowUsers"/>
         <h1>Welcome</h1>
         <hr>
-        <a href="${urlShowAll}">view all user's</a>
+        <a href="${urlShowUsers}">view all user's</a>
         <hr>
     </div>
+<jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>
