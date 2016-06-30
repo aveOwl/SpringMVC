@@ -2,8 +2,6 @@ package com.spring.mvc.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
-
 /**
  * Register of the {@code DispatcherServlet}.
  */

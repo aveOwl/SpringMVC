@@ -3,7 +3,6 @@ package com.spring.mvc.controller;
 import com.spring.mvc.entity.User;
 import com.spring.mvc.service.UserService;
 import com.spring.mvc.validator.UserFormValidator;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
