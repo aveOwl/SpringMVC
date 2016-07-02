@@ -10,7 +10,9 @@
         <spring:url value="/users" var="urlShowUsers"/>
         <h1>Welcome</h1>
         <hr>
-        <a href="${urlShowUsers}">view all user's</a>
+        <form action="${urlShowUsers}">
+            <button class="btn-primary" type="submit">View all user's</button>
+        </form>
         <hr>
     </div>
 <jsp:include page="fragments/footer.jsp"/>

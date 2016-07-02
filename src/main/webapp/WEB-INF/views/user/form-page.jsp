@@ -44,6 +44,16 @@
             </div>
         </spring:bind>
 
+        <spring:bind path="nickName">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <label class="col-sm-2 control-label">NickName</label>
+                <div class="col-sm-10">
+                    <form:input path="nickName" type="text" class="form-control " id="nickName" placeholder="NickName" />
+                    <form:errors path="nickName" class="control-label" />
+                </div>
+            </div>
+        </spring:bind>
+
         <spring:bind path="email">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <label class="col-sm-2 control-label">Email</label>
@@ -70,16 +80,6 @@
                 <div class="col-sm-10">
                     <form:password path="confirmPassword" class="form-control" id="confirmPassword" placeholder="ConfirmPassword" />
                     <form:errors path="confirmPassword" class="control-label" />
-                </div>
-            </div>
-        </spring:bind>
-
-        <spring:bind path="monthSalary">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <label class="col-sm-2 control-label">MonthSalary</label>
-                <div class="col-sm-10">
-                    <form:input path="monthSalary" class="form-control" id="monthSalary" placeholder="MonthSalary" />
-                    <form:errors path="monthSalary" class="control-label" />
                 </div>
             </div>
         </spring:bind>

@@ -30,14 +30,9 @@ public class UserFormValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.userForm.password");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword", "NotEmpty.userForm.confirmPassword");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty.userForm.email");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "monthSalary", "NotEmpty.userForm.monthSalary");
 
         if (!emailValidator.valid(user.getEmail())) {
             errors.rejectValue("email", "Pattern.userForm.email");
-        }
-
-        if (user.getMonthSalary() == null || user.getMonthSalary() <= 0) {
-            errors.rejectValue("monthSalary", "NotEmpty.userForm.monthSalary");
         }
 
         if (!user.getPassword().equals(user.getConfirmPassword())) {

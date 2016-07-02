@@ -32,9 +32,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "month_salary")
-    private Double monthSalary;
-
     public boolean isNew() {return this.userId == null;}
 
     public Long getUserId() {
@@ -93,24 +90,13 @@ public class User {
         this.email = email;
     }
 
-    public Double getMonthSalary() {
-        return monthSalary;
-    }
-
-    public void setMonthSalary(Double month_salary) {
-        this.monthSalary = month_salary;
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         User user = (User) o;
 
         return userId.equals(user.userId);
-
     }
 
     @Override
@@ -127,7 +113,6 @@ public class User {
                 ", nickName='" + nickName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", monthSalary=" + monthSalary +
                 '}';
     }
 }

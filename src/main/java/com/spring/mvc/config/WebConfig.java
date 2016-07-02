@@ -11,6 +11,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 
 /**
+ * Extra Configuration for Web.
  * @Configuration tells, that this class is a Spring configuration.
  * @EnableWebMvc imports the Spring MVC configuration.
  */
@@ -45,7 +46,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("welcome");
+        registry.addViewController("/").setViewName("welcome-page");
     }
 
     /**

@@ -12,7 +12,7 @@
     <name>SpringMVC</name>
 
     <properties>
-        <project.build.finalName>SpringMVC</project.build.finalName>
+            <project.build.finalName>SpringMVC</project.build.finalName>
         <spring.version>4.2.6.RELEASE</spring.version>
         <hibernate.version>4.3.8.Final</hibernate.version>
         <spring.data.version>1.10.1.RELEASE</spring.data.version>
@@ -94,6 +94,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${compiler.plugin.version}</version>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>

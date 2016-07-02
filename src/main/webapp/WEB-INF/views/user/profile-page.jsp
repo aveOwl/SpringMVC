@@ -1,3 +1,4 @@
+<%@ page session="false"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -33,10 +34,6 @@
     <div class="row">
         <label class="col-sm-2">Email</label>
         <div class="col-sm-10">${user.email}</div>
-    </div>
-    <div class="row">
-        <label class="col-sm-2">MonthSalary</label>
-        <div class="col-sm-10">${user.monthSalary}</div>
     </div>
 </div>
 <jsp:include page="../fragments/footer.jsp" />

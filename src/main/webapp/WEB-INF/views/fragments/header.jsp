@@ -3,7 +3,7 @@
 <head>
     <title>Spring MVC</title>
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
-    <link href="${bootstrapCss}" rel="stylesheet" />
+    <link rel="stylesheet" href="${bootstrapCss}" />
 </head>
 
 <spring:url value="/" var="urlHome" />
@@ -12,7 +12,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="${urlHome}">Spring MVC Form</a>
+            <a class="navbar-brand" href="${urlHome}">Spring MVC</a>
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav navbar-right">

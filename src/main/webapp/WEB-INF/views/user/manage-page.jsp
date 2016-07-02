@@ -26,7 +26,6 @@
             <th>lastName</th>
             <th>nickName</th>
             <th>email</th>
-            <th>month_salary</th>
         </tr>
         </thead>
 
@@ -37,17 +36,15 @@
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.nickName}</td>
-                <td>${user.password}</td>
                 <td>${user.email}</td>
-                <td>${user.monthSalary}</td>
                 <td>
                     <spring:url value="/user/${user.userId}" var="userUrl" />
-                    <spring:url value="/user/${user.userId}/delete" var="deleteUrl" />
                     <spring:url value="/user/${user.userId}/update" var="updateUrl" />
+                    <spring:url value="/user/${user.userId}/delete" var="deleteUrl" />
 
                     <button class="btn btn-info" onclick="location.href='${userUrl}'">Query</button>
                     <button class="btn btn-primary" onclick="location.href='${updateUrl}'">Update</button>
-                    <button class="btn btn-danger" onclick="this.disabled=true;post('${deleteUrl}')">Delete</button>
+                    <button class="btn btn-danger" onclick="location.href='${deleteUrl}'">Delete</button>
                 </td>
             </tr>
         </c:forEach>

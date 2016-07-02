@@ -18,6 +18,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
+ * Extra configuration for data managing.
  * @Configuration tells, that this class is a Spring configuration.
  *
  * @EnableTransactionManagement enables transaction management for the purpose of
@@ -44,13 +45,15 @@ public class DataConfig {
     private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
     private static final String PROP_HIBERNATE_DEFAULT_SCHEMA = "hibernate.default_schema";
 
-    // to retrieve properties from properties file.
+    /**
+     * Retrieving properties from properties file.
+     */
     @Resource
     private Environment env;
 
     /**
-     * @Bean indicates that a method instantiates, configures and initializes
-     * a new object to be managed by the Spring IoC container.
+     * DataSource configuration:
+     * DriverClass, URL, Username/Password.
      * @return dataSource.
      */
     @Bean
@@ -64,6 +67,10 @@ public class DataConfig {
         return dataSource;
     }
 
+    /**
+     * Setting up a shared JPA EntityManagerFactory in a Spring application context.
+     * @return factory bean that creates JPA.
+     */
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean =
@@ -76,7 +83,11 @@ public class DataConfig {
         return entityManagerFactoryBean;
     }
 
-    //  integrates the JPA provider with the Spring transaction mechanism
+    /**
+     * Integrates the JPA provider with the Spring transaction mechanism.
+     * @param entityManagerFactory for transactional data access.
+     * @return transaction manager.
+     */
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -85,6 +96,10 @@ public class DataConfig {
         return transactionManager;
     }
 
+    /**
+     * Configure Hibernate from property file.
+     * @return hibernate configuration.
+     */
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
         properties.put(PROP_HIBERNATE_DIALECT, env.getRequiredProperty(PROP_HIBERNATE_DIALECT));
