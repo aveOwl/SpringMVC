@@ -1,4 +1,9 @@
-# Practicing Spring Web MVC Framework
+# Management-System
+[![Build Status](https://travis-ci.org/aveowl/Management-System.svg?branch=master)](https://travis-ci.org/aveowl/Management-System)
+
+# About
+*Practicing Spring Web MVC Framework*
+
 **Technologies involved**
 * [Maven](https://maven.apache.org/what-is-maven.html)
 * [Spring Data JPA](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
