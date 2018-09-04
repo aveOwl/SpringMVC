@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +12,7 @@
     <name>SpringMVC</name>
 
     <properties>
-            <project.build.finalName>SpringMVC</project.build.finalName>
+        <project.build.finalName>SpringMVC</project.build.finalName>
         <spring.version>4.2.6.RELEASE</spring.version>
         <hibernate.version>4.3.8.Final</hibernate.version>
         <spring.data.version>1.10.1.RELEASE</spring.data.version>

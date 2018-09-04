@@ -1,13 +1,13 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <head>
     <title>Spring MVC</title>
-    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
-    <link rel="stylesheet" href="${bootstrapCss}" />
+    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss"/>
+    <link rel="stylesheet" href="${bootstrapCss}"/>
 </head>
 
-<spring:url value="/" var="urlHome" />
-<spring:url value="/users/add" var="urlAddUser" />
+<spring:url value="/" var="urlHome"/>
+<spring:url value="/users/add" var="urlAddUser"/>
 
 <nav class="navbar navbar-inverse">
     <div class="container">

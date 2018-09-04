@@ -19,13 +19,11 @@ import java.util.Properties;
 
 /**
  * Extra configuration for data managing.
- * @Configuration tells, that this class is a Spring configuration.
  *
+ * @Configuration tells, that this class is a Spring configuration.
  * @EnableTransactionManagement enables transaction management for the purpose of
  * managing transactions in DataBase.
- *
  * @ComponentScan tells Spring where to find Entity, DAO, Service.
- *
  * @PropertySource to make use of the properties file.
  */
 @Configuration
@@ -54,6 +52,7 @@ public class DataConfig {
     /**
      * DataSource configuration:
      * DriverClass, URL, Username/Password.
+     *
      * @return dataSource.
      */
     @Bean
@@ -69,6 +68,7 @@ public class DataConfig {
 
     /**
      * Setting up a shared JPA EntityManagerFactory in a Spring application context.
+     *
      * @return factory bean that creates JPA.
      */
     @Bean
@@ -85,6 +85,7 @@ public class DataConfig {
 
     /**
      * Integrates the JPA provider with the Spring transaction mechanism.
+     *
      * @param entityManagerFactory for transactional data access.
      * @return transaction manager.
      */
@@ -98,6 +99,7 @@ public class DataConfig {
 
     /**
      * Configure Hibernate from property file.
+     *
      * @return hibernate configuration.
      */
     private Properties getHibernateProperties() {

@@ -1,13 +1,13 @@
-<%@ page session="false"%>
+<%@ page session="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Profile</title>
 </head>
 <body>
-<jsp:include page="../fragments/header.jsp" />
+<jsp:include page="../fragments/header.jsp"/>
 <div class="container">
     <c:if test="${not empty msg}">
         <div class="alert alert-${css} alert-dismissible" role="alert">
@@ -18,7 +18,7 @@
         </div>
     </c:if>
     <h1>User Detail</h1>
-    <br />
+    <br/>
     <div class="row">
         <label class="col-sm-2">FirstName</label>
         <div class="col-sm-10">${user.firstName}</div>
@@ -36,6 +36,6 @@
         <div class="col-sm-10">${user.email}</div>
     </div>
 </div>
-<jsp:include page="../fragments/footer.jsp" />
+<jsp:include page="../fragments/footer.jsp"/>
 </body>
 </html>

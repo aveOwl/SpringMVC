@@ -14,7 +14,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -46,6 +51,7 @@ public class UserController {
 
     /**
      * Initializing userService.
+     *
      * @param userService userService to be autowired by Spring.
      */
     @Autowired
@@ -55,8 +61,9 @@ public class UserController {
 
     /**
      * Binding {@code userFormValidator}.
+     *
      * @param binder binds web request parametersredirectAttributes
-     * to JavaBean objects.
+     *               to JavaBean objects.
      */
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
@@ -66,6 +73,7 @@ public class UserController {
 
     /**
      * Binding User entity to model attribute "userForm".
+     *
      * @return new user entity.
      */
     @ModelAttribute("userForm")
@@ -76,6 +84,7 @@ public class UserController {
     /**
      * On path "/users" with request method GET mapping all users
      * from database (list of users) to display it in table on web page.
+     *
      * @param model holder for model attributes.
      * @return view name.
      */
@@ -96,6 +105,7 @@ public class UserController {
 
     /**
      * On path "/user/add" mapping user entity.
+     *
      * @param model holder for model attributes.
      * @return view name.
      */
@@ -111,10 +121,11 @@ public class UserController {
      * On path "/users" with request method POST mapping user validation.
      * After the redirect, flash attributes are automatically added to the model
      * of the controller that serves the target URL
-     * @param user user to be updated/created.
-     * @param result allowing error registration,
-     * {@link Validator} to be applied.
-     * @param model holder for model attributes.
+     *
+     * @param user               user to be updated/created.
+     * @param result             allowing error registration,
+     *                           {@link Validator} to be applied.
+     * @param model              holder for model attributes.
      * @param redirectAttributes used to add flash attributes.
      * @return view name.
      */
@@ -144,8 +155,9 @@ public class UserController {
 
     /**
      * On Path "/user/{userId}" mapping single user page.
+     *
      * @param userId id of user who's page displayed.
-     * @param model holder for model attributes.
+     * @param model  holder for model attributes.
      * @return view name.
      */
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
@@ -165,8 +177,9 @@ public class UserController {
 
     /**
      * On Path "/user/{userId}/update" mapping user entity update.
+     *
      * @param userId id of user to be updated.
-     * @param model holder for model attributes.
+     * @param model  holder for model attributes.
      * @return view name.
      */
     @RequestMapping(value = "/user/{userId}/update", method = RequestMethod.GET)
@@ -180,7 +193,8 @@ public class UserController {
 
     /**
      * On Path "/user/{userId}/delete" mapping user entity delete.
-     * @param userId id of user to be deleted.
+     *
+     * @param userId             id of user to be deleted.
      * @param redirectAttributes used to add flash attributes.
      * @return view name.
      */
@@ -200,8 +214,9 @@ public class UserController {
     /**
      * Displays ERROR page when a result was expected to have at least
      * one row (or element) but zero rows (or elements) were actually returned.
+     *
      * @param request user request.
-     * @param e exception.
+     * @param e       exception.
      * @return model.
      */
     @ExceptionHandler(EmptyResultDataAccessException.class)

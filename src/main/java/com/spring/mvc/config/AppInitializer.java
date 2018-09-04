@@ -9,6 +9,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     /**
      * Root WebApplicationContext. Containing middle-tier services, dataSources, etc.
+     *
      * @return Class with RootConfiguration.
      */
     @Override
@@ -21,17 +22,19 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
     /**
      * Servlet WebApplicationContext. Containing controllers, view resolvers,
      * and other web-related beans.
+     *
      * @return Class with WebConfiguration.
      */
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[] {
+        return new Class<?>[]{
                 WebConfig.class
         };
     }
 
     /**
      * Returns mapping(s) for the {@code DispatcherServlet}.
+     *
      * @return mapping(s) for the {@code DispatcherServlet}.
      */
     @Override

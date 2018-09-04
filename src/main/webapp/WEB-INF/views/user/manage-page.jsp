@@ -1,12 +1,12 @@
-<%@ page session="false"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page session="false" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
     <title>Users List</title>
 </head>
 <body>
-<jsp:include page="../fragments/header.jsp" />
+<jsp:include page="../fragments/header.jsp"/>
 <div class="container">
     <c:if test="${not empty msg}">
         <div class="alert alert-${css} alert-dismissible" role="alert">
@@ -38,9 +38,9 @@
                 <td>${user.nickName}</td>
                 <td>${user.email}</td>
                 <td>
-                    <spring:url value="/user/${user.userId}" var="userUrl" />
-                    <spring:url value="/user/${user.userId}/update" var="updateUrl" />
-                    <spring:url value="/user/${user.userId}/delete" var="deleteUrl" />
+                    <spring:url value="/user/${user.userId}" var="userUrl"/>
+                    <spring:url value="/user/${user.userId}/update" var="updateUrl"/>
+                    <spring:url value="/user/${user.userId}/delete" var="deleteUrl"/>
 
                     <button class="btn btn-info" onclick="location.href='${userUrl}'">Query</button>
                     <button class="btn btn-primary" onclick="location.href='${updateUrl}'">Update</button>
@@ -51,6 +51,6 @@
         </tbody>
     </table>
 </div>
-<jsp:include page="../fragments/footer.jsp" />
+<jsp:include page="../fragments/footer.jsp"/>
 </body>
 </html>

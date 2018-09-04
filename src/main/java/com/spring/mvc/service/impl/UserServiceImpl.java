@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- *  Mostly used as a facade for all controllers.
+ * Mostly used as a facade for all controllers.
  */
 @Service
 public class UserServiceImpl implements UserService {
